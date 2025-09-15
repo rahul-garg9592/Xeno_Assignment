@@ -4,6 +4,8 @@ import { Navigate } from "react-router-dom"
 import { Button } from "../components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card"
 
+const backendUrl = import.meta.env.VITE_API_URL || "http://localhost:8080"
+
 export default function LoginPage() {
   const { user, loading } = useAuth()
 
@@ -20,11 +22,11 @@ export default function LoginPage() {
   }
 
   const handleGoogleLogin = () => {
-    window.location.href = "http://localhost:8080/auth/google"
+    window.location.href = `${backendUrl}/auth/google`
   }
 
   const handleMockLogin = () => {
-    window.location.href = "http://localhost:8080/auth/mock"
+    window.location.href = `${backendUrl}/auth/mock`
   }
 
   return (
